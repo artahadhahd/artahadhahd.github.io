@@ -15,23 +15,46 @@ div p::selection {
 }
 
 #menu-bar {
-    height: 10rem;
-    width: 10rem;
+    height: 11rem;
+    width: 13rem;
     display: grid;
-    grid-template-rows: 0.25fr, 0.1fr, 0.25fr, 1fr;
+    grid-template-rows: repeat(1fr, 4);
     text-align: center;
+    background-color: rgba(20, 20, 20, 0.9);
+    border-radius: 1rem;
+    transition: 1s;
 }
 
 #menu-bar svg rect {
     fill: white;
 }
 #menu-bar p {
-    width: min-content;
+    width: 11rem;
     position: relative;
     cursor: pointer;
     display: flex;
     padding-left: 1rem;
 }
-#menu-bar p:nth-child(4) {
-    width: 5rem;
+#menu-bar p:hover {
+    color: olive;
+}
+
+#pfp img {
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+    top: 0.5rem;
+    right: 1rem;
+}
+
+/* mobile compatibility */
+@media only screen and (max-width: 500px) {
+    #pfp img {
+        height: 7rem;
+        width: 7rem;
+    }
+    #menubar {
+        width: 11rem;
+    }
 }
