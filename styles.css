@@ -57,7 +57,7 @@ div p::selection {
     width: 12rem;
     border-radius: 100%;
     top: 0.5rem;
-    right: 1rem;
+    right: 10px;
 }
 
 .content {
