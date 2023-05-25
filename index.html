@@ -8,14 +8,43 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="pfps">
-            <img src="./images/pfp.png">
+        <div>
+            <p id="corner">Arta aka. dwordmlong's corner of the internet!</p>
         </div>
-        <div id="menu-bar">
-            <p>rnwdmlong#4545</p>
-            <svg style="padding-left: 0.25rem;" width="200" height="1"><rect width="200" height="1"/></svg>
-            <p>Home</p>
-            <p onclick="window.location = './blog.html'">Blog</p>
+        <div id="navbar">
+            <button>Blog</button>
+            <button>Files</button>
         </div>
     </body>
+    <script>
+        const navbar = document.getElementById('navbar').children;
+        navbar.item(0).addEventListener('click', () => {
+            window.location = "blog.html";
+        });
+        navbar.item(1).addEventListener('click', () => {
+            window.location = "files.html"
+        });
+        const corner = document.getElementById('corner');
+        var local = 0;
+        var count = 0;
+        function recurse() {
+            corner.addEventListener('click', () => {
+                local++;
+                count++;
+                if (count % 3 == 0) {
+                    corner.innerText = "Are't you tired now? You clicked me " +
+                    local +
+                    " times!";
+                }
+                if (count === 6) {
+                    corner.innerText = "Stop!";
+                }
+                if (count > 6) {
+                    count = 0;
+                    recurse();
+                }
+            });
+        }
+        recurse();
+    </script>
 </html>
