@@ -6,15 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>dwordmlong</title>
         <link rel="stylesheet" href="styles.css">
+        <style>
+            .selector {
+                max-width: 0;
+            }
+        </style>
     </head>
     <body>
-        <div>
+        <div class="selector">
             <p>Ethik_Hausaufgabe</p>
-            <img src="Assets/Todsuenden.jpg">
         </div>
-        <div><p>NOTE: THIS PART OF THE WEBSITE IS INCOMPLETE</p></div>
+        <div class="selector">
+            <p>Test</p>
+        </div>
         <script>
-            // TODO: do something epic (event click? -> search for the html file related to it ->profit lol)
+            document.querySelectorAll('.selector').forEach(p => {
+                p.addEventListener('click', () => {
+                    window.location = "files/" + 
+                        p.children.item(0).innerText.toLowerCase() +
+                        ".html"
+                });
+            });
         </script>
     </body>
 </html>

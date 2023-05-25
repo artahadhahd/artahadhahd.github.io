@@ -9,6 +9,7 @@ body {
     background-color: rgba(20, 20, 20, 0.9);
 }
 
+div a,
 div p,
 div h1 {
     font-family: 'Ubuntu';
