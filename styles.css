@@ -24,12 +24,12 @@ div p::selection {
 #navbar {
     display: flex;
     justify-content: center;
-    background-color: rgba(20, 20, 20, 0.9);
-    /* background: #1111aa; */
+    /* background-color: rgba(20, 20, 20, 0.9); */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #navbar button {
-    background-color: rgba(20, 20, 20, 0.9);
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
     padding: 10px;
     border: 0;
@@ -85,6 +85,7 @@ div p::selection {
 }
 
 .selector2 {
+    display: inline-table;
     max-width: 20%;
     max-height: max-content;
     padding: 30px;
@@ -116,7 +117,33 @@ div p::selection {
     }
     .selector2 {
         max-width: 50%;
-        transform: translateX(27%);
+        transform: translateX(25%);
+    }
+    .selector2:hover {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #corner {
+        display: none;
+    }
+    .selector2 {
+        max-width: 50%;
+        transform: translateX(20%);
+    }
+    .selector2:hover {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    #corner {
+        display: none;
+    }
+    .selector2 {
+        max-width: 50%;
+        transform: translateX(10%);
     }
     .selector2:hover {
         padding: 30px;
