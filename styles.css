@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&light=swap');
+@import url('Assets/CedarvilleCursive-Regular.ttf');
 
 * {
     margin: 0;
@@ -9,11 +10,51 @@ body {
     background-color: #1e2122;
 }
 
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#pfp {
+    animation: rotating infinite linear 10s;
+    border-radius: 100%;
+}
+
 div a,
 div p,
 div h1 {
     font-family: 'Ubuntu';
     color: rgba(255, 255, 255, 0.7);
+}
+
+#quote h1 {
+    background-color: #000;
+    border-radius: 3px;
+    width: max-content;
+    font-family: 'cursive';
+    font-size: 1cm;
+    color:rgba(255, 255, 255, 0.75);
+}
+
+#quote pre {
+    font-family: 'cursive';
+    color: #fff;
+    background-color: black;
+    width: min-content
+}
+
+#quote h1::selection {
+    color: red;
+}
+
+.selector pre {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1cm;
+    font-family: 'cursive';
 }
 
 div p::selection {
@@ -101,6 +142,15 @@ div p::selection {
 
 .selector2:nth-child(1) {
     animation: Anime 1 linear 0.2s;
+}
+
+.selector2 p {
+    transition: 0.2s;
+}
+
+.selector2 p:nth-child(2):hover {
+    width: min-content;
+    color: rgb(172, 127, 30);
 }
 
 .selector2:hover {
