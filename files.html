@@ -6,29 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>dwordmlong</title>
         <link rel="stylesheet" href="styles.css">
-        <style>
-            .selector {
-                max-width: max-content;
-                padding: 12px;
-                margin-left: 2px;
-                margin-right: 2px;
-                margin-top: 3px;
-                background-color: black;
-                border-radius: 5px;
-            }
-            .selector:hover {
-                cursor: pointer;
-            }
-            .selector:nth-child(even) {
-                background-color: rgba(31, 6, 6, 0.9);
-            }
-        </style>
     </head>
     <body>
         <div style="display: flex; justify-content: center;">
             <div class="selector">
                 <p title="Die sieben Todsünden">
-                    Ethik_Hausaufgabe
+                    Ethik Hausaufgabe
                 </p>
             </div>
             <div class="selector">
@@ -39,7 +22,7 @@
             document.querySelectorAll('.selector').forEach(p => {
                 p.addEventListener('click', () => {
                     window.location = "files/" + 
-                        p.children.item(0).innerText.toLowerCase() +
+                        p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_') +
                         ".html"
                 });
             });
