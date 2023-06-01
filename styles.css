@@ -68,6 +68,20 @@ div p::selection {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+#navbar img {
+    width: 3rem;
+}
+
+#flag {
+    position: absolute;
+    right: 1rem;
+    border-radius: 3px;
+}
+
+#flag:hover {
+    cursor: pointer;
+}
+
 #navbar button {
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
