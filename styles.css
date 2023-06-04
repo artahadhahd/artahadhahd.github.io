@@ -9,6 +9,19 @@ body {
     background-color: #1e2122;
 }
 
+
+@media (prefers-color-scheme: light) {
+    html body {
+        background-color: white;
+    }
+    p,
+    h1,
+    h2,
+    h4 {
+        color: black;
+    }
+}
+
 @keyframes rotating {
     from {
         -webkit-transform: rotate(0deg);
@@ -174,6 +187,23 @@ div p::selection {
     background-color:#0e1114;
 }
 
+#github {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    height: 2rem;
+}
+
+#info {
+    position: relative;
+    height: 13.65rem;
+    width: 13.65rem;
+    background-color: black;
+    transform: translateY(3%);
+    border-radius: 100%;
+}
+
 @media only screen and (max-width: 770px) {
     #corner {
         display: none;
@@ -184,6 +214,9 @@ div p::selection {
     }
     .selector2:hover {
         padding: 30px;
+    }
+    #github {
+        display: block;
     }
 }
 
@@ -197,6 +230,9 @@ div p::selection {
     }
     .selector2:hover {
         padding: 30px;
+    }
+    #github {
+        display: block;
     }
 }
 

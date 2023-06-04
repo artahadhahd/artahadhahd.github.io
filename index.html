@@ -9,9 +9,7 @@
         <link rel="shortcut icon" type="image/png" href="Assets/ico.jpeg?">
     </head>
     <body>
-        <div>
-            <p id="corner">Arta aka. dwordmlong's corner of the internet!</p>
-        </div>
+        <div><p id="corner">Arta aka. dwordmlong's corner of the internet!</p></div>
         <div id="navbar">
             <button>Blog</button>
             <button>Files</button>
@@ -19,45 +17,15 @@
                 <img id="flag" src="Assets/Ukraine.jpg">
             </a>
         </div>
-        <div class="selector" style="display: inline-block; border-radius: 100%;">
-            <a title="pfp origin [YouTube video]" href="https://www.youtube.com/watch?v=2tn8vnVXRr0" target="_blank" rel="noreferrer noopener">
-                <img id="pfp" src="Assets/ico.jpeg">
-            </a>
+        <div style="display: flex; justify-content: center;">
+            <div class="selector" style="border-radius: 100%; display: inline-block;">
+                <a title="pfp origin [YouTube video]" href="https://www.youtube.com/watch?v=2tn8vnVXRr0" target="_blank" rel="noreferrer noopener"><img id="pfp" src="Assets/ico.jpeg"></a>
+                <a href="https://github.com/artahadhahd" target="_blank" rel="noopener noreferrer"><img src="Assets/github.png" id="github"></a>
+            </div>
+            <div id="info">
+
+            </div>
         </div>
-        <!-- <div id="quote">
-            <h1>"Ich hab' mein' Sach' auf Nichts gestellt."&nbsp;</h1>
-            <pre>                           - Max Stirner</pre>
-        </div> -->
+        <script src="index.js"></script>
     </body>
-    <script>
-        const navbar = document.getElementById('navbar').children;
-        navbar.item(0).addEventListener('click', () => {
-            window.location = "blog.html";
-        });
-        navbar.item(1).addEventListener('click', () => {
-            window.location = "files.html"
-        });
-        const corner = document.getElementById('corner');
-        var local = 0;
-        var count = 0;
-        function recurse() {
-            corner.addEventListener('click', () => {
-                local++;
-                count++;
-                if (count % 3 == 0) {
-                    corner.innerText = "Aren't you tired now? You clicked me " +
-                    local +
-                    " times!";
-                }
-                if (count === 6) {
-                    corner.innerText = "Stop!";
-                }
-                if (count > 6) {
-                    count = 0;
-                    recurse();
-                }
-            });
-        }
-        recurse();
-    </script>
 </html>
