@@ -217,6 +217,7 @@ div p::selection {
     }
     #github {
         display: block;
+        height: 2rem;
     }
 }
 

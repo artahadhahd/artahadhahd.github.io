@@ -8,6 +8,18 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <div id="navbar">
+            <button>Home</button>
+            <button>Files</button>
+            <a target="_blank" href="https://stand-with-ukraine.pp.ua/#support-ukraine" rel="noreferrer noopener">
+                <img id="flag" src="Assets/Ukraine.jpg">
+            </a>
+        </div>
+        <div>
+            <!-- most bizarre html ever. This accesses the top navbar, therefore a part of it -->
+            <a href="https://github.com/artahadhahd" target="_blank" rel="noopener noreferrer"><img src="Assets/Git.png" id="github"></a>
+        </div>
+
         <div class="selector2">
             <h1>AI and humans</h1>
             <p class="description"><strong>Philosophy</strong></p>
@@ -21,15 +33,31 @@
                 Haskell is a purely functional programming language. It was invented a year before Python, in 1990, but it isn't as popular as Python.
             </p>
         </div>
+        <div class="selector2">
+            <h1>Python fun facts</h1>
+            <p class="description"><strong>Programming</strong></p>
+            <p>
+                Here I put fun facts about Python which you probably didn't know; from basic builtin functions to esoteric, advanced (and even low-level) code written in Python.
+            </p>
+        </div>
         <script>
-            document.querySelectorAll('.selector2').forEach(p => {
-                p.addEventListener('click', () => {
-                    window.location = "blogposts/" + 
-                        p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_')
-                        .replaceAll('?', '').replaceAll('!', '') + ".html";
-                });
-                p.children.item(0).style.color = "yellow";
+        document.querySelectorAll('.selector2').forEach(p => {
+            p.addEventListener('click', () => {
+                window.location = "blogposts/" + 
+                    p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_')
+                    .replaceAll('?', '').replaceAll('!', '') + ".html";
             });
+            p.children.item(0).style.color = "yellow";
+        });
+        </script>
+        <script>
+        const navbar = document.getElementById('navbar').children;
+        navbar.item(0).addEventListener('click', () => {
+            window.location = "index.html";
+        });
+        navbar.item(1).addEventListener('click', () => {
+            window.location = "files.html"
+        });
         </script>
     </body>
 </html>

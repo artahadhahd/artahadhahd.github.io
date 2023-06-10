@@ -9,6 +9,17 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <div id="navbar">
+            <button>Home</button>
+            <button>Blog</button>
+            <a target="_blank" href="https://stand-with-ukraine.pp.ua/#support-ukraine" rel="noreferrer noopener">
+                <img id="flag" src="Assets/Ukraine.jpg">
+            </a>
+        </div>
+        <div>
+            <!-- most bizarre html ever. This accesses the top navbar, therefore a part of it -->
+            <a href="https://github.com/artahadhahd" target="_blank" rel="noopener noreferrer"><img src="Assets/Git.png" id="github"></a>
+        </div>
         <div style="display: flex; justify-content: center;">
             <div class="selector">
                 <p title="Die sieben Todsünden">
@@ -27,6 +38,15 @@
                         ".html"
                 });
             });
+        </script>
+        <script>
+        const navbar = document.getElementById('navbar').children;
+        navbar.item(0).addEventListener('click', () => {
+            window.location = "index.html";
+        });
+        navbar.item(1).addEventListener('click', () => {
+            window.location = "blog.html"
+        });
         </script>
     </body>
 </html>

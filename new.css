@@ -1,0 +1,18 @@
+.aboutme {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+    width: 20rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    padding-top: 2%;
+}
+
+.aboutme img {
+    border-radius: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
