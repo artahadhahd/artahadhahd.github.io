@@ -12,9 +12,9 @@ Here's how you write the Fibonacci Sequence in it.
 fib = 1 : 1 : zipWith (+) fib (tail fib) :: [Integer]
 ```
 
-This will give us an infinite list of Integers (well, theoretically).
+This will give us an infinite list of Integers... theoretically.
 
-`Integer` can be an arbitrarily large integer - unlike `Int` which is basically in range -2^63 to 2^63-1 (machine dependant, check with `maxBount :: Int` in GHCi). The limit depends on your memory. So the more memory you have, the closer you get to really large numbers.
+`Integer` can be an arbitrarily large integer - unlike `Int` which is basically in range -2^63 to 2^63-1 (machine dependant, check with `maxBound :: Int` in GHCi). The limit depends on your memory. So the more memory you have, the closer you get to really large numbers.
 
 Haskell always forgets about the last element that it calculated, in case it's not needed. So hypothetically, the only other thing stopping you from having an infinite list of integers is just the fact that you're printing those numbers. That takes memory too.
 
