@@ -20,9 +20,11 @@ Haskell always forgets about the last element that it calculated, in case it's n
 
 Since Haskell evaluates functions lazily, no fibonacci number will be calculated until you tell it to print them.
 
-So anyways, as you can see Haskell is an exciting language for a mathematician. And highly rewarding if you know what you're doing, since it's surprisingly fast if you write correct and sometimes can challenge much faster languages such as C++.
+So anyways, as you can see Haskell is an exciting language for a mathematician. And highly rewarding if you know what you're doing, since it's surprisingly fast if you write good code and sometimes can challenge much faster languages such as C++.
 
-But because it was developed by mathematicians, there are some weird stuff about it. Like what the fuck is a zygohistomorphism? (sorry for the vulgar language)
+But because it was developed by mathematicians, there are some weird stuff about it. Like, what the f*ck is a zygohistomorphisc prepromorphism?
+
+How to even pronounce this?
 
 So let's open Haskell docs to see what it is.
 
@@ -34,6 +36,16 @@ Used when you really need both semi-mutual recursion and history and to repeated
 
 Do you understand anything from this? I don't, and don't expect anyone to.
 
-[Haskell can apparently do Lifting](https://wiki.haskell.org/Lifting) too. What an awesome language.
+[Haskell can apparently can do Lifting](https://wiki.haskell.org/Lifting) too. What an awesome language.
 
 I love Haskell. And I don't want it to change.
+
+# "For the programmer"
+
+Haskell has `cabal` for package manager. It's ... decent.
+
+For viewing Haskell documentation I recommend Haddock.
+
+You can write Haskell like Python or C, but don't. Please. Haskell is meant to be **declarative**, not **imperative**. It's really abstract and "high-level".
+
+Rust uses monads, but you never hear the scary words "monads" and "monoids" when you write Rust code. Another W for Rust tbh
