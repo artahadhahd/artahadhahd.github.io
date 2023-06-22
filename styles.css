@@ -249,6 +249,36 @@ div p::selection {
         padding: 30px;
     }
 }
+.better {
+    text-align: center; 
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+#ddd {
+    display: inline-block;
+    transform: translateY(-40%) translateX(10%);
+    text-align: left;
+}
+
+@media only screen and (max-width: 850px) {
+    .better {
+        padding-left: 3rem;
+    padding-right: 3rem;
+    }
+}
+
+@media only screen and (max-width: 628px) {
+    #ddd {
+        text-align: center;
+        display: block;
+        transform: translateY(30%);
+    }
+    .better {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
 
 .side-by-side {
     margin-bottom: 10px;

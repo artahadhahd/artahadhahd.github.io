@@ -49,3 +49,5 @@ For viewing Haskell documentation I recommend Haddock.
 You can write Haskell like Python or C, but don't. Please. Haskell is meant to be **declarative**, not **imperative**. It's really abstract and "high-level".
 
 Rust uses monads, but you never hear the scary words "monads" and "monoids" when you write Rust code. Another W for Rust tbh
+
+Haskell is good at ETL!
