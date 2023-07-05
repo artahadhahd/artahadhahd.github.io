@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'Segoe';
-    src: url('Assets/Segoe.ttf');
-    src: url('Assets/Segoe.woff2') format('woff2');
+    src: url('./Assets/Segoe.ttf');
+    src: url('./Assets/Segoe.woff2') format('woff2');
 }
 
 * {
