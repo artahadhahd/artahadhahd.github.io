@@ -315,3 +315,17 @@ div p::selection {
     color: rgba(255, 255, 255, 0.4);
     text-align: left;
 }
+
+#winwrapper {
+    position: fixed;
+    bottom: 6vh;
+    right: 3vw;
+    
+}
+#winwrapper:hover {
+    cursor: default;
+}
+#winwrapper p::selection {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.4);
+}
