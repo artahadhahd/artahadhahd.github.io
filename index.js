@@ -1,6 +1,6 @@
 const navbar = document.getElementById('navbar').children;
 navbar.item(0).addEventListener('click', () => {
-    window.location = "blog.html";
+    window.location = "blogposts/";
 });
 navbar.item(1).addEventListener('click', () => {
     window.location = "files.html"
