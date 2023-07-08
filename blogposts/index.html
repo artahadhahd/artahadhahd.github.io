@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>dwordmlong</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div id="navbar">
+            <button>Home</button>
+            <button>Files</button>
+            <a target="_blank" href="https://stand-with-ukraine.pp.ua/#support-ukraine" rel="noreferrer noopener">
+                <img id="flag" src="Assets/Ukraine.jpg">
+            </a>
+        </div>
+        <div>
+            <!-- most bizarre html ever. This accesses the top navbar, therefore a part of it -->
+            <a href="https://github.com/artahadhahd" target="_blank" rel="noopener noreferrer"><img src="Assets/Git.png" id="github"></a>
+        </div>
+        <div class="selector2">
+            <h1>AI and humans</h1>
+            <p class="description"><strong>Philosophy</strong></p>
+            <p>Artificial Intelligence has become a really hot topic nowadays. Let's take a closer look at its impact on individuals' mind, and how the point of view of life has changed for some people.</p>
+        </div>
+        <div class="selector2">
+            <!-- Note: the posts related to programming are rendered with markdown, which cannot be shown locally and are interpreted by GitHub Pages -->
+            <h1>What is Haskell?</h1>
+            <p class="description"><strong>Programming</strong></p>
+            <p>
+                Haskell is a purely object-oriented programming language. It was invented a year before Python, in 1990, but it isn't as popular as Python.
+            </p>
+        </div>
+        <div class="selector2">
+            <h1>Python fun facts</h1>
+            <p class="description"><strong>Programming</strong></p>
+            <p>Great and interesting facts about Python; An extremely fast, compiled programming language competing with C, Rust and Fortran</p>
+        </div>
+        <div class="selector2">
+            <h1>People put lame shit in their blogs</h1>
+            <p class="description"><strong></strong></p>
+            <p>This website is however interesting af</p>
+        </div>
+        <script>
+        document.querySelectorAll('.selector2').forEach(p => {
+            p.addEventListener('click', () => {
+                window.location = "blogposts/" + 
+                    p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_')
+                    .replaceAll('?', '').replaceAll('!', '') + ".html";
+            });
+            p.children.item(0).style.color = "yellow";
+        });
+        </script>
+        <script>
+        const navbar = document.getElementById('navbar').children;
+        navbar.item(0).addEventListener('click', () => {
+            window.location = "index.html";
+        });
+        navbar.item(1).addEventListener('click', () => {
+            window.location = "files.html"
+        });
+        </script>
+    </body>
+</html>
