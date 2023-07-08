@@ -11,9 +11,6 @@
         <div id="navbar">
             <button>Home</button>
             <button>Files</button>
-            <a target="_blank" href="https://stand-with-ukraine.pp.ua/#support-ukraine" rel="noreferrer noopener">
-                <img id="flag" src="Assets/Ukraine.jpg">
-            </a>
         </div>
         <div>
             <!-- most bizarre html ever. This accesses the top navbar, therefore a part of it -->
@@ -45,8 +42,7 @@
         <script>
         document.querySelectorAll('.selector2').forEach(p => {
             p.addEventListener('click', () => {
-                window.location = "blogposts/" + 
-                    p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_')
+                window.location = p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_')
                     .replaceAll('?', '').replaceAll('!', '') + ".html";
             });
             p.children.item(0).style.color = "yellow";
