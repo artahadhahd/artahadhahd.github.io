@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Segoe';
+    src: url('../Assets/Segoe.ttf');
+    src: url('../Assets/Segoe.woff2') format('woff2');
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    font-family: 'Segoe UI';
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: red;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+}
+
+#wrapper {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    height: max-content;
+    padding-bottom: 2rem;
+}
+
+.content {
+    width: 30%;
+    padding-top: 2%;
+    padding-right: 2%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content h3 {
+    color: red;
+}
+
+#introduction p {
+    color: rgb(172, 41, 41);
+}
