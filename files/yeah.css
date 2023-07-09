@@ -41,13 +41,14 @@
     margin: 2%;
     padding: 5px;
     border-radius: 10px;
-    /* background-color: rgba(196, 196, 196, 0.562); */
+    border-style: dotted;
+    border-color: rgba(196, 196, 196, 0.4);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content h3 {
     background-color: rgba(196, 196, 196, 0.4);
-    color: red;
+    color: rgb(179, 62, 62);
 }
 
 #introduction p {
