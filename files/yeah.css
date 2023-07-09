@@ -4,6 +4,10 @@
     src: url('../Assets/Segoe.woff2') format('woff2');
 }
 
+* {
+    cursor: default;
+}
+
 .center {
     display: flex;
     justify-content: center;
