@@ -28,7 +28,7 @@
     padding-bottom: 2rem;
 }
 
-.content {
+#except {
     width: 30%;
     margin: 2%;
     padding: 5px;
@@ -36,10 +36,25 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.content {
+    width: 30%;
+    margin: 2%;
+    padding: 5px;
+    border-radius: 10px;
+    /* background-color: rgba(196, 196, 196, 0.562); */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .content h3 {
+    background-color: rgba(196, 196, 196, 0.4);
     color: red;
 }
 
 #introduction p {
     color: rgb(172, 41, 41);
+}
+
+#introduction {
+    background-color: #eee;
+    border-radius: 0;
 }
