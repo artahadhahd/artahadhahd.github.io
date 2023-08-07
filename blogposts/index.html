@@ -9,25 +9,19 @@
     <style>
         div {
             text-align: center;
+            cursor: pointer;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
     <div>
-        <p>What is Haskell?</p>
+        <a href="what_is_haskell.html">What is Haskell?</a>
     </div>
     <div>
-        <p>Cool Python code snippets</p>
+        <a href="cool_python_code_snippets.html">Cool Python code snippets</a>
     </div>
-    <script>
-        document.querySelectorAll('div').forEach(p => {
-            p.addEventListener('click', () => {
-                window.location = p.children.item(0).innerText.toLowerCase().replaceAll(' ', '_')
-                    .replaceAll('?', '').replaceAll('!', '') + ".html";
-            });
-        });
-    </script>
 </body>
 
 </html>
