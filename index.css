@@ -1,0 +1,67 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(26, 23, 23);
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 0.10rem;
+}
+
+p {
+    margin: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+p::selection,
+h1::selection {
+    color: rgb(194, 226, 11);
+    background-color: black;
+}
+
+[center] {
+    display: flex;
+    justify-content: center;
+}
+
+[only-center-text] {
+    text-align: center;
+}
+
+[container-width] {
+    width: 20rem;
+}
+
+[container-height] {
+    height: 20rem;
+}
+
+button {
+    background-color: inherit;
+    color: white;
+    border: 0;
+    padding: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 50px;
+    width: max-content;
+    font-size: large;
+    transition: 0.2s;
+}
+
+button:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    background: black;
+}
+
+a {
+    all: unset;
+}
