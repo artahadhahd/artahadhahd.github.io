@@ -77,13 +77,16 @@ a {
 
 
 #contact {
+    width: 102%;
+    transform: translateX(-1%);
     background-color: black;
 }
 
 #spacer {
     aspect-ratio: 900/100;
     background-image: url('./wave-haikei\(5\).svg');
-    width: 100%;
+    transform: translateX(-1%);
+    width: 102%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
