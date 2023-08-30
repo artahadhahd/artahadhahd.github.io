@@ -65,3 +65,26 @@ button:hover {
 a {
     all: unset;
 }
+
+.curve {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    background-color: pink;
+    z-index: -1;
+    bottom: 0;
+}
+
+
+#contact {
+    background-color: black;
+}
+
+#spacer {
+    aspect-ratio: 900/100;
+    background-image: url('./wave-haikei\(4\).svg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
