@@ -43,6 +43,10 @@ h1::selection {
     height: 20rem;
 }
 
+[cat] {
+    border-radius: 10px;
+}
+
 button {
     background-color: inherit;
     color: white;
@@ -85,6 +89,26 @@ a {
 #spacer {
     aspect-ratio: 900/100;
     background-image: url('./wave-haikei\(5\).svg');
+    transform: translateX(-1%);
+    width: 102%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#spacer2 {
+    aspect-ratio: 900/100;
+    background-image: url('./wave-haikei\(4\).svg');
+    transform: translateX(-1%);
+    width: 102%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#spacerb {
+    aspect-ratio: 900/100;
+    background-image: url('./wave-haikei\(7\).svg');
     transform: translateX(-1%);
     width: 102%;
     background-repeat: no-repeat;
