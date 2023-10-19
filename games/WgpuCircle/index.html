@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WgpuCircle</title>
+    <link rel="stylesheet" href="../../index.css">
+</head>
+<body id="wasm-example">
+    <p>Press space to reveal what this circle is made of!</p>
+    <script type="module">
+        import init from "./pkg/first_project.js"
+        init().then(
+            () => console.log("WGPU has been loaded successfully")
+        )
+    </script>
+</body>
+</html>
