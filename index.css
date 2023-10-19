@@ -6,7 +6,10 @@ body {
     background-color: rgb(26, 23, 23);
 }
 
+h2,
+a,
 h1 {
+    transition: 0.2s;
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
@@ -20,10 +23,67 @@ p {
     color: white;
 }
 
-p::selection,
+a:hover > h1,
+a:hover > p {
+    transition: 0.2s;
+    color: gray;
+}
+
+#heimer {
+    padding: 1rem;
+    width: min-content;
+    height: 5rem;
+    background-color: black;
+    border-radius: 10px;
+    margin: 0;
+}
+
+#wtf {
+    visibility: hidden;
+    /* border-radius: 10px; */
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+    background-color: black;
+    height: 10rem;
+    width: 315px;
+    transform: translateY(-35%);
+}
+
+#wtf:hover,
+#heimer:hover + #wtf {
+    background-color: black;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+/* a:hover + #heimer {
+    height: 100%;
+} */
+
+a:hover {
+    cursor: pointer;
+}
+
+
+
+/* p::selection,
 h1::selection {
     color: rgb(194, 226, 11);
     background-color: black;
+} */
+
+#pfp {
+    width: 5rem;
+    height: 5rem;
+    /* padding: 1rem; */
+    border-radius: 100%;
+}
+
+#doodle {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 [center] {
@@ -48,13 +108,14 @@ h1::selection {
 }
 
 button {
+    border-radius: 5px;
     background-color: inherit;
     color: white;
     border: 0;
     padding: 10px;
     margin-right: 5px;
     margin-left: 5px;
-    height: 50px;
+    height: max-content;
     width: max-content;
     font-size: large;
     transition: 0.2s;
@@ -63,7 +124,7 @@ button {
 button:hover {
     cursor: pointer;
     transition: 0.2s;
-    background: black;
+    color: gray;
 }
 
 a {
@@ -114,4 +175,12 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+@media only screen and (max-width: 1000px) {
+    #wtf {
+        background-color: black;
+        visibility: visible;
+        opacity: 1;
+    }
 }
