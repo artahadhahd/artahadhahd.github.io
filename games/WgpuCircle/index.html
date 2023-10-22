@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WgpuCircle</title>
     <link rel="stylesheet" href="../../index.css">
+    <style>
+        #loading {
+            display: block;
+        }
+    </style>
 </head>
-<body id="wasm-example">
+<body>
     <p>Press space to reveal what this circle is made of!</p>
+    <div id="wasm-example">
+        <div id="loading">
+            <p>Please wait...</p>
+        </div>
+        <!-- WGPU canvas -->
+    </div>
     <script type="module">
-        import init from "./pkg/first_project.js"
+        import init from "./pkg/first_project.js";
         init().then(
-            () => console.log("WGPU has been loaded successfully")
-        )
+            () => {
+                document.getElementById('loading').style.display = 'none';
+                console.log("Loaded WGPU");
+            }
+        );
     </script>
+    <p>This is actually a shape with 100 sides.</p>
 </body>
 </html>
