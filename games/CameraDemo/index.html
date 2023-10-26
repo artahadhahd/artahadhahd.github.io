@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WgpuCircle</title>
+    <link rel="stylesheet" href="../../index.css">
+</head>
+<body>
+    <p>Press space, arrow keys, WASD and see what they do.</p>
+    <div id="wasm-example">
+        <div id="loading">
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <script type="module">
+        import init from "./pkg/first_project.js";
+        init().then(
+            () => {
+                document.getElementById('loading').style.display = 'none';
+                console.log("Loaded WGPU");
+            }
+        );
+    </script>
+    <p>This is actually a shape with 100 sides.</p>
+</body>
+</html>
