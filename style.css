@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&light=swap');
+
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Ubuntu';
+}
+
+h1 {
+    size: 50%;
+}
+
+[round] {
+    border-radius: 100%;
+}
+
+p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+}
