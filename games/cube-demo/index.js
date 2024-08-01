@@ -5,25 +5,29 @@ import { Object } from "./object.js"; // helper class written by me
 import { vertices, indices } from "./data.js";
 
 
-const vsSource = readFile('main.vertex');
-const fsSource = readFile('main.frag');
+const vsSource = "attribute vec3 aPos;uniform mat4 uTransform;void main(){gl_Position=uTransform*vec4(aPos,1.0);}";
+const fsSource = "void main(){gl_FragColor=vec4(1.0,0.5,0.5,1.0);}";
 
 
 
 class Square extends Object {
     onInit() {
         this.y = 1;
-        document.addEventListener('keydown', (key) => {
-            if (key.key == 'r') {
-                if (this.y == 1) this.y = -1; else this.y = 1;
-            }
-            
-            if (key.key == 'w') {
-                if (this._render_mode == gl.TRIANGLES)
-                     this._render_mode = gl.LINE_LOOP;
-                else this._render_mode = gl.TRIANGLES;
-            }
-        });
+        document.addEventListener('keydown', (key) => this.control(key.key));
+        document.getElementById('w').addEventListener('click', () => this.control('w'));
+        document.getElementById('r').addEventListener('click', () => this.control('r'));
+    }
+
+    control(ch) {
+        if (ch == 'r') {
+            if (this.y == 1) this.y = -1; else this.y = 1;
+        }
+        
+        if (ch == 'w') {
+            if (this._render_mode == gl.TRIANGLES)
+                 this._render_mode = gl.LINE_LOOP;
+            else this._render_mode = gl.TRIANGLES;
+        }
     }
 
     update(deltaTime) {
@@ -35,6 +39,7 @@ class Square extends Object {
 const index = function() {
     if (window.innerWidth < 800) {
         alert("Warning: This page is meant for PCs, your screen appears to be small and you may not get the full experience.")
+        document.getElementById('code-container').style.display = 'none';
     }
 
     const file_content = readFile('index.js');
