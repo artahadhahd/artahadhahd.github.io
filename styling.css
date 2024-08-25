@@ -1,0 +1,119 @@
+body {
+    background-color: #1E201E;
+    color: #ECDFCC;
+    height: 100%;
+}
+
+#user {
+    /* font-family: "New Amsterdam", sans-serif; */
+    /* font-family: "Indie Flower", cursive; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#user::after {
+    content: ',';
+    color: #ECDFCC;
+}
+
+#intro {
+    width: 500px;
+    /* background-color: #697565; */
+    background-color: #3C3D37;
+}
+
+.card {
+    background-color: #3C3D37;
+    padding: 5px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    border: 1px solid #697565;
+    border-radius: 2px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(200%);
+        top: 50%;
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes keyboard {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hide-after::after {
+    display: none;
+}
+
+#skills {
+    font-size: medium;
+}
+
+#skills::after {
+    content: "|";
+    animation: keyboard 1s infinite; 
+}
+
+/* .container {
+    position: relative;
+    width: 500px;
+    animation: move 2s ease-in;
+} */
+
+/* .container:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+} */
+
+#content {
+    max-width: 500px;
+    opacity: 0;
+}
+
+.container {
+    animation: move 1s ease-in-out;
+    /* background-color: #3C3D37; */
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+}
+
+p, h3, h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+a:visited {
+    color: white;
+    display: none;
+}
+
+
+figure > img {
+    width: 50px;
+    height: 50px;
+}

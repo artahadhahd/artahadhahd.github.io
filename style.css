@@ -19,9 +19,21 @@ p {
     padding-right: 20px;
 }
 
+
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: black;
         color: white;
     }
+}
+
+fieldset {
+    margin: 20;
+    border-radius: 6px;
+    padding: 50;
+}
+summary:hover {
+    color: red;
+    cursor: pointer;
 }

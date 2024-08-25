@@ -7,22 +7,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>doodleheimer</title>
     <link rel="shortcut icon" type="image/png" href="Assets/ico.jpeg?">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styling.css">
 </head>
 
 <body>
-    <div style="padding: 10px; width: fit-content;">
-        <img round style="width: 5rem;" src="https://github.com/artahadhahd.png">
-        <a style="display: inline-block; transform: translateY(-75%); font-size: xx-large; padding-left: 10px;" href="https://github.com/artahadhahd" target="_blank">doodleheimer</a>
+    <div class="container">
+        <div class="center">
+            <div id="intro">
+                <h3>Hello there! This is...</h3>
+                <div class="center">
+                    <h1 id="user">doodleheimer,</h1>
+                </div>
+                <div class="right">
+                    <h3 id="skills">programmer</h3>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <ul>
-            <li><a href="blogposts/">Here I write stupid shit that no one reads</a></li>
-            <li><a href="games/">Here I WILL be making games</a></li>
-            <li><a href="about/">Learn more about me</a></li>
-        </ul>
-        <p>Enjoy the next 24 hours</p>
+
+    <div class="center">
+        <div id="content">
+            <section>
+                <p>Welcome to my website.</p>
+                <p>Here I post some blog posts and share some of my programming projects. My website
+                    is just an outlet of my (not so) creative ideas. This website looks like one from the 90s for some reason. I don't know, I like it.
+                </p>
+                <p>
+                    I'll add my blogposts and everything,,, it just takes some time.
+                </p>
+                <hr>
+                <h3>To know me better...</h3>
+                <p>I was born in Iran and I live in Germany. I speak Persian, English, German, French and a little bit of Spanish.
+                    I am interested in programming websites and apps.
+                </p>
+            </section>
+            <div class="card">
+                <h3>Socials</h3>
+                <hr>
+                <p>I am available on Telegram, Discord and GitHub. On all platforms except for GitHub I am called 'doodleheimer' so it shouldn't be too difficult to find me.</p>
+                <p>Here are quick links to my profiles:</p>
+                <div class="center">
+                    <a href="https://t.me/doodleheimer">
+                        <figure>
+                            <img alt="Telegram" width="50" height="50" src="Assets/telegram.png">
+                        </figure>
+                    </a>
+                    <a href="https://discord.com/users/1023516443763036211">
+                        <figure>
+                            <img alt="Discord" width="50" height="50" src="Assets/discord.png">
+                        </figure>
+                    </a>
+                    <a href="https://github.com/artahadhahd">
+                        <figure>
+                            <img alt="GitHub" width="50" height="50" src="Assets/github.png">
+                        </figure>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <script>
+        // just glued this shit together, don't care about quality
+        String.prototype.replaceAt = function(index, replacement) {
+            return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+        }
+        const goal = "doodleheimer";
+        let buffer = "aXYbQMB,.;AY";
+        const user = document.getElementById('user');
+        const intro = document.getElementById('intro');
+        const content = document.getElementById('content');
+
+        let sotp = false;
+        function nextChar(c) {
+            return String.fromCharCode(c.charCodeAt(0) + 1);
+        }
+
+        let k = 0;
+
+        const test = () => {
+            k += 1;
+            for (let i = 0; i < goal.length; i++) {
+                if (buffer === goal) {
+                    sotp = true;
+                    break;
+                }
+                if (goal.charAt(i) === buffer.charAt(i)) {
+                    continue;
+                }
+                buffer = buffer.replaceAt(i, nextChar(buffer.charAt(i)));
+            }
+            
+            user.innerText = buffer;
+
+            if (sotp) {
+                // user.style.color = "#1E201E";
+                // document.getElementsByClassName('container')[0].style.position = 'absolute';
+                clearInterval(interval);
+            }
+        };
+
+        const interval = setInterval(test, 50);
+        setTimeout(() => {
+            let opacity = 0;
+            const op = () => {
+                opacity += 0.25;
+                content.style.opacity = opacity;
+                if (opacity == 100) {
+                    clearInterval(opacity_interval);
+                }
+            };
+            const opacity_interval = setInterval(op, 100);
+        }, 1000);
+
+
+        const skills = document.getElementById('skills');
+        const skillarray = ["programmer", "musician", "athlete", "mathematician"];
+        let skindex = 1;
+
+        let delete_timeout = 0;
+
+        
+        setTimeout(() => {
+            const sk = () => {
+                // skills.innerText = `${skillarray[skindex]}.`;
+                const s = skillarray[skindex];
+                let si = 0;
+
+                // const delete_all = () => {
+                //     if (skills.innerText.length != 0) {
+                //         skills.innerText = skills.innerText.substring(0, skills.innerText.length - 1);
+                //     } else {
+                //         clearInterval(delete_interval);
+                //     }
+                // };
+                // const delete_interval = setInterval(delete_all, 5);
+
+
+
+                const type_out = () => {
+                    if (si >= s.length) {
+                        clearInterval(type_interval);
+                        return;
+                    }
+                    skills.innerText += s[si++];
+                };
+                const type_interval = setInterval(type_out, 100);
+
+                skills.innerText += skindex == skillarray.length - 1 ? ' and ' : ', ';
+
+                skindex += 1;
+                if (skindex == skillarray.length) {
+                    clearInterval(skill_interval);
+                }
+            };
+            const skill_interval = setInterval(sk, 2000);
+        }, 2000);
+
+            
+    </script>
 </body>
 
 </html>
