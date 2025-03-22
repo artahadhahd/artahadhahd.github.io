@@ -1,0 +1,7 @@
+pre {
+    background-color: rgb(255, 255, 170);
+    width: min-content;
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 10px;
+}

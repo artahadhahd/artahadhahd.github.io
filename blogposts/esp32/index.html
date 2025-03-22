@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32</title>
+</head>
+<body>
+    <h1>What is ESP32?</h1>
+    <h6>22.03.2025</h6>
+    <p>
+        The ESP32 is a series of dual-core 32-bit processors with Wi-Fi and Bluetooth capabilities.
+        It's a very common and cheap chip used for many hobby projects. It has more than 30 GPIO pins, however,
+        not all of them are true GPIO pins and you should be careful with your pin choices. It can be programmed
+        using the C programming language via <a href="https://github.com/espressif/esp-idf">the ESP-IDF framework</a>
+        or using C++ via the Arduino platform.
+    </p>
+    <p>
+        A development board should not cost much (I bought two from Amazon for about 10 Euros, but you
+        can buy them for way cheaper) and the chips alone cost a lot less. You can program the chip in the <a href="https://www.arduino.cc/en/software/">Arduino IDE</a> 
+        or using the <a href="https://platformio.org/platformio-ide">PlatformIO</a> extension on Visual Studio Code (my preferred way). Or you could link your programs yourself
+        and flash them manually, which would take a bit longer.
+    </p>
+    <p>They are fairly common and you can buy them from many vendors, but <a href="https://products.espressif.com/#/product-selector">you need to see which chip is the best for your needs</a>
+        . The chip itself should be powered by a 3.3V power supplier. There is usually a power regulator on the development modules available
+    online so you just need to plug the board to your computer, download the USB-UART drivers and you can start writing code.
+    Two of the most common USB-UART chips used on the dev boards are the
+    <a href="https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers">CP210x</a> and
+    <a href="https://www.wch-ic.com/downloads/CH341SER_ZIP.html">CH340x</a>
+    chips. You need to download the right one so your board is detected by your computer.
+    <br>
+    <b>Attention! Make sure that your USB cable transfers power AND data. Some USB cables only transfer power and are meant for charging. If
+        your board still isn't detected by your device, a possible fix could be changing the cable connecting the board to your computer.
+    </b>
+    </p>
+    <p>
+        Here are some app examples in C using the ESP-IDF framework:
+        <br>
+        <ul>
+            <li>
+                <a href="blinky/">Blinky</a>
+            </li>
+            <li>
+                <a href="pwm/">Simple PWM (Pulse-width modulation)</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

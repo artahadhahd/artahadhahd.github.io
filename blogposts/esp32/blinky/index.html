@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 | Blinky</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <a href="../">Back</a>
+    <h1>Blinky program</h1>
+    <p>This is the infamous blinky program. The goal is to turn on the LED for 1 second, turn it off for 1 second, and repeat indefinitely.</p>
+
+    <pre><code>
+#include "freertos/FreeRTOS.h"  // pdMS_TO_TICKS
+#include "freertos/task.h"      // vTaskDelay()
+#include "driver/gpio.h"        // gpio_set_direction(), gpio_set_level()
+
+const int LED_PIN = 5;
+
+void app_main() {
+    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
+
+    while (1) {
+        gpio_set_level(LED_PIN, 0);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+        gpio_set_level(LED_PIN, 1);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+    </code></pre>
+
+</body>
+</html>
