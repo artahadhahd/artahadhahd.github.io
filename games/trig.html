@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Trigonometry</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+    <h3>Basic trigonometry calculator</h3>
+    a: <input id="a" type="number">
+    b: <input id="b" type="number">
+    c: <input id="c" type="number">
+    <br>
+    α: <input id="alpha" type="number">
+    β: <input id="beta" type="number">
+    γ: <input id="gamma" type="number">
+    <script>
+        function midpoint(p1, p2) {
+            return createVector((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);
+        }
+
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+        }
+
+        let success = false;
+
+        function getElem(name) {
+            parseFloat(document.getElementById(name).value);
+        }
+
+        function validateInput() {
+            
+        }
+
+        function draw() {
+            if (!success) {
+                textSize(24);
+                text("Failed to draw triangle: bad data", 0, 20);
+                return;
+            }
+            fill(255, 255, 255);
+            let A = createVector(50, 300);
+            let C = createVector(50, 100);
+            let B = createVector(200, 300);
+
+            triangle(A.x, A.y, B.x, B.y, C.x, C.y);
+
+            // let alpha = degrees(angleBetween(B, A, C));
+            // let beta = degrees(angleBetween(A, B, C));
+            // let gamma = degrees(angleBetween(A, C, B));
+            fill(10, 100, 20);
+            let a = midpoint(B, C);
+            a.x += 2;
+            let b = midpoint(C, A);
+            b.x -= 10;
+            let c = midpoint(A, B);
+            c.y += 10;
+            text("a", a.x, a.y);
+            text("b", b.x, b.y);
+            text("c", c.x, c.y);
+
+            fill(0);
+            textSize(12);
+            text("A", A.x - 10, A.y + 10);
+            text("B", B.x, B.y + 10);
+            text("C", C.x - 5, C.y - 5);
+
+            fill(0);
+            circle(A.x, A.y, 5);
+            circle(B.x, B.y, 5);
+            circle(C.x, C.y, 5);
+        }
+    </script>
+</body>
+</html>

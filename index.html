@@ -7,162 +7,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>doodleheimer</title>
     <link rel="shortcut icon" type="image/png" href="Assets/ico.jpeg?">
-    <link rel="stylesheet" href="/styling.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="center">
-            <div id="intro">
-                <h3>Hello there! This is...</h3>
-                <div class="center">
-                    <h1 id="user">doodleheimer,</h1>
-                </div>
-                <div class="right">
-                    <h3 id="skills">programmer</h3>
-                </div>
+    <div class="center-v-h">
+        <div class="main-grid">
+            <h1 id="hecker" class="highlight"></h1>
+            <div class="center">
+                <button>
+                    <a href="#about">
+                        <h4>
+                            <u>about me</u>
+                        </h4>
+                    </a>
+                </button>
+                <button>
+                    <a href="blogposts/">
+                        <h4>
+                            <u>blog posts</u>
+                        </h4>
+                    </a>
+                </button>
+                <button>
+                    <a href="games/">
+                        <h4>
+                            <u>random stuff</u>
+                        </h4>
+                    </a>
+                </button>
             </div>
         </div>
     </div>
-
-    <div class="center">
-        <div id="content">
-            <div class="card">
-                <p>Welcome to my website.</p>
-                <p>Here I post some <a href="blogposts/">blog posts</a> and share some of my programming projects. My website
-                    is just an outlet of my creative ideas. This website looks like one from the 90s for some reason. I don't know, I like it.
-                </p>
-                <hr>
-                <h3>To know me better...</h3>
-                <p>I was born in Iran and I live in Germany. I speak Persian, English, German, French and a little bit of Spanish.
-                    I am interested in programming websites and apps.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Socials</h3>
-                <hr>
-                <p>I am available on Telegram, Discord and GitHub. On all platforms except for GitHub I am called 'doodleheimer' so it shouldn't be too difficult to find me.</p>
-                <p>Here are quick links to my profiles:</p>
-                <div class="center">
-                    <a href="https://t.me/doodleheimer">
-                        <figure>
-                            <img alt="Telegram" width="50" height="50" src="Assets/telegram.png">
-                        </figure>
-                    </a>
-                    <a href="https://discord.com/users/1023516443763036211">
-                        <figure>
-                            <img alt="Discord" width="50" height="50" src="Assets/discord.png">
-                        </figure>
-                    </a>
-                    <a href="https://github.com/artahadhahd">
-                        <figure>
-                            <img alt="GitHub" width="50" height="50" src="Assets/github.png">
-                        </figure>
-                    </a>
-                </div>
-            </div>
-
-        </div>
+    <hr>
+    <div class="center-v-h" id="about">
+        <h1 class="highlight">hello world.</h1>
+        <p>my name is doodleheimer, but you might also know me as arta.</p>
+        <p>
+            i am an aspiring programmer interested in software development,
+            embedded systems and cyber security.
+        </p>
+        <p>
+        <p>
+            i speak farsi, german, english and french. my favorite language is c.
+        </p>
+        <p>
+            it's very nice to meet you!
+        </p>
     </div>
 
     <script>
-        // just glued this shit together, don't care about quality
-        String.prototype.replaceAt = function(index, replacement) {
-            return this.substring(0, index) + replacement + this.substring(index + replacement.length);
-        }
-        const goal = "doodleheimer";
-        let buffer = "aXYbQMB,.;AY";
-        const user = document.getElementById('user');
-        const intro = document.getElementById('intro');
-        const content = document.getElementById('content');
+        const doodleheimer = document.getElementById('hecker');
 
-        let sotp = false;
-        function nextChar(c) {
-            return String.fromCharCode(c.charCodeAt(0) + 1);
+        const ASCII_START_LOWER = 97;
+        const GOAL_STRING = "doodleheimer";
+
+        function randomAscii(maximum) {
+            const maxAscii = maximum.charCodeAt(0);
+            const index = Math.floor(Math.random() * (maxAscii - ASCII_START_LOWER) + ASCII_START_LOWER);
+            const letter = String.fromCharCode(index);
+            return letter;
         }
 
-        let k = 0;
+        let randomString = "";
+        for (let i = 0; i < GOAL_STRING.length; i++) {
+            randomString += randomAscii(GOAL_STRING.charAt(i));
+        }
+        doodleheimer.textContent = randomString;
 
-        const test = () => {
-            k += 1;
-            for (let i = 0; i < goal.length; i++) {
-                if (buffer === goal) {
-                    sotp = true;
-                    break;
+        typeLetter(randomString, GOAL_STRING);
+
+        function nextAscii(letter) {
+            return String.fromCharCode(letter.charCodeAt(0) + 1);
+        }
+
+        function typeLetter(current, goal) {
+            const type = () => {
+                if (current == goal) {
+                    clearInterval(typeInterval);
                 }
-                if (goal.charAt(i) === buffer.charAt(i)) {
-                    continue;
-                }
-                buffer = buffer.replaceAt(i, nextChar(buffer.charAt(i)));
-            }
-            
-            user.innerText = buffer;
-
-            if (sotp) {
-                // user.style.color = "#1E201E";
-                // document.getElementsByClassName('container')[0].style.position = 'absolute';
-                clearInterval(interval);
-            }
-        };
-
-        const interval = setInterval(test, 50);
-        setTimeout(() => {
-            let opacity = 0;
-            const op = () => {
-                opacity += 0.25;
-                content.style.opacity = opacity;
-                if (opacity == 100) {
-                    clearInterval(opacity_interval);
-                }
-            };
-            const opacity_interval = setInterval(op, 100);
-        }, 1000);
-
-
-        const skills = document.getElementById('skills');
-        const skillarray = ["programmer", "musician", "athlete", "mathematician"];
-        let skindex = 1;
-
-        let delete_timeout = 0;
-
-        
-        setTimeout(() => {
-            const sk = () => {
-                // skills.innerText = `${skillarray[skindex]}.`;
-                const s = skillarray[skindex];
-                let si = 0;
-
-                // const delete_all = () => {
-                //     if (skills.innerText.length != 0) {
-                //         skills.innerText = skills.innerText.substring(0, skills.innerText.length - 1);
-                //     } else {
-                //         clearInterval(delete_interval);
-                //     }
-                // };
-                // const delete_interval = setInterval(delete_all, 5);
-
-
-
-                const type_out = () => {
-                    if (si >= s.length) {
-                        clearInterval(type_interval);
-                        return;
+                for (let i = 0; i < goal.length; i++) {
+                    if (current.charAt(i) == goal.charAt(i)) {
+                        continue;
                     }
-                    skills.innerText += s[si++];
-                };
-                const type_interval = setInterval(type_out, 100);
-
-                skills.innerText += skindex == skillarray.length - 1 ? ' and ' : ', ';
-
-                skindex += 1;
-                if (skindex == skillarray.length) {
-                    clearInterval(skill_interval);
+                    current = setCharAt(current, i, nextAscii(current.charAt(i)));
                 }
+                doodleheimer.textContent = current;
             };
-            const skill_interval = setInterval(sk, 2000);
-        }, 2000);
+            const typeInterval = setInterval(type, 100);
+        }
 
-            
+        function setCharAt(str, index, chr) {
+            if(index > str.length - 1) {
+                return str;
+            }
+            return str.substring(0, index) + chr + str.substring(index + 1);
+        }
     </script>
 </body>
 

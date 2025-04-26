@@ -1,39 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&light=swap');
+@font-face {
+    font-family: "Segoe";
+    src: url("Assets/Segoe.ttf");
+}
 
-body {
-    background-color: white;
-    color: black;
-    font-family: 'Ubuntu';
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.center-v-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
 }
 
 h1 {
-    size: 50%;
+    font-family: "Segoe";
 }
 
-[round] {
-    border-radius: 100%;
+.highlight {
+    background-color: rgb(184, 184, 184);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+button {
+    border: 0;
+    background-color: white;
+}
+
+.stack {
+    display: block;
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a {
+    color: black;
 }
 
 p {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: black;
-        color: white;
-    }
-}
-
-fieldset {
-    margin: 20;
-    border-radius: 6px;
-    padding: 50;
-}
-summary:hover {
-    color: red;
-    cursor: pointer;
+    font-family: 'Segoe';
+    margin-top: 5px;
+    padding: 2px;
 }
